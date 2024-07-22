@@ -10,9 +10,8 @@ function WineModal({winery, wine, rating, location, image}) {
   const [ fechaDeCompra, setFechaDeCompra ] = useState("")
   const [ cantidad, setCantidad ] = useState("")
   const [ precio, setPrecio ] = useState("")
-
-
   const [ show, setShow ] = useState (false);
+  
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -22,7 +21,10 @@ function WineModal({winery, wine, rating, location, image}) {
     const addBottleToCellar = {
       fechaDeCompra: fechaDeCompra,
       cantidad: cantidad,
-      precio: precio
+      precio: precio,
+      image: image,
+      wine: wine,
+      winery: winery
     }
     try {
       await axios.post(`${import.meta.env.VITE_SERVER_URL}/inventories`, addBottleToCellar)
@@ -67,7 +69,6 @@ function WineModal({winery, wine, rating, location, image}) {
                 value={precio}
                 placeholder= "precio por botella"
                 onChange={(e) => setPrecio(e.target.value)}
-
                 autoFocus
               />
             </Form.Group>
@@ -79,7 +80,6 @@ function WineModal({winery, wine, rating, location, image}) {
                 value={fechaDeCompra}
                 placeholder= "año de compra"
                 onChange={(e) => setFechaDeCompra(e.target.value)}
-
                 autoFocus
               />
             </Form.Group>
