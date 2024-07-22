@@ -4,7 +4,7 @@ function About() {
   return (
     <div>
 
-<h1>Iñigo Estaban Gómez</h1>
+<h1>Iñigo Esteban Gómez</h1>
 
 
 <h1>Félix Romero González</h1>
