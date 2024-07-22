@@ -16,7 +16,8 @@ function App() {
     <Routes>
     <Route path = "/" element = {<HomePage />} />
     <Route path = "/about" element = {<About />} />
-    <Route path = "/wines" element = {<WinesList />} />
+    <Route path="/wines/reds" element={<WinesList type="reds"/>}/>
+    <Route path="/wines/whites" element={<WinesList type="whites"/>}/>  
     <Route path = "*" element = {<NotFound />} />
     </Routes>
 
