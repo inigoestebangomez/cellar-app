@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import WineModal from "../Components/WineModal";
 
 function WinesList({type}) {
   
@@ -27,7 +29,14 @@ function WinesList({type}) {
     <div>
       {wines.map ((eachWine, index)=>{
         return (
-          <h1 key={index}>{eachWine.winery}</h1>
+          <div key={index} className="wine-card">
+          <img src={eachWine.image} alt="bottle-image"/>
+          <h4>Bodega: {eachWine.winery}</h4>
+          <h4>Vino: {eachWine.wine}</h4>    
+          <p>{eachWine.location}</p>
+          <p>⭐ {eachWine.rating.average}</p>
+          <WineModal winery={eachWine.winery} wine={eachWine.wine} rating={eachWine.rating} location={eachWine.location} image={eachWine.image}/>
+          </div>
         )
 
       })}
