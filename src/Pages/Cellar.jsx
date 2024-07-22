@@ -1,14 +1,13 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import WineModal from "../Components/WineModal"
 
-// en el cellar hay que añadir información de imagen y nombre
 // cuando abrimos en detalle cada vino: llamada a la API correspondiente
 
 
 function Cellar() {
 
  const [ inventory, setInventory ] = useState( null )
-console.log(inventory)
 
  useEffect(() => {
   getOurBottles()
@@ -40,7 +39,6 @@ console.log(inventory)
           <p>Año de compra: {eachInventory.fechaDeCompra}</p>
           <p>Precio por botella: {eachInventory.precio} €</p>
           <p>Cantidad: {eachInventory.cantidad} uds</p>
-          
           </div>
         )
       })}
