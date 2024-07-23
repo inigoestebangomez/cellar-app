@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
@@ -7,6 +8,8 @@ import ModalHeader from 'react-bootstrap/ModalHeader'
 
 function WineModal({winery, wine, rating, location, image}) {
   
+  const navigate = useNavigate();
+
   const [ fechaDeCompra, setFechaDeCompra ] = useState("")
   const [ cantidad, setCantidad ] = useState("")
   const [ precio, setPrecio ] = useState("")
@@ -28,6 +31,8 @@ function WineModal({winery, wine, rating, location, image}) {
     }
     try {
       await axios.post(`${import.meta.env.VITE_SERVER_URL}/inventories`, addBottleToCellar)
+      
+      navigate(`/cellar`)
     } catch (error) {
       console.log(error)
     }
