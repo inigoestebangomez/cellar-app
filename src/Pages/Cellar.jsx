@@ -1,19 +1,14 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import WineModal from "../Components/WineModal"
+
+import EditWineModal from "../Components/EditWineModal"
 
 // cuando abrimos en detalle cada vino: llamada a la API correspondiente
-
-
 function Cellar() {
-
  const [ inventory, setInventory ] = useState( null )
-
  useEffect(() => {
   getOurBottles()
  }, [])
-
-
  const getOurBottles = async () => {
   try {
     const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/inventories`)
@@ -25,7 +20,6 @@ function Cellar() {
  if ( inventory === null){
   return <h3>...buscando data</h3>
  }
- 
   return (
     <div>
       <h1>BODEGA</h1>
@@ -35,10 +29,13 @@ function Cellar() {
           <div key={index} className="wine-card">
           <img src={eachInventory.image} alt="bottle-image"/>
           <h4>Bodega: {eachInventory.winery}</h4>
-          <h4>Vino: {eachInventory.wine}</h4>    
+          <h4>Vino: {eachInventory.wine}</h4>
           <p>Año de compra: {eachInventory.fechaDeCompra}</p>
           <p>Precio por botella: {eachInventory.precio} €</p>
           <p>Cantidad: {eachInventory.cantidad} uds</p>
+
+          <EditWineModal id ={eachInventory.id}  inFechaDeCompra={eachInventory.fechaDeCompra} inPrecio={eachInventory.precio} inCantidad={eachInventory.cantidad}/>
+
           </div>
         )
       })}
@@ -47,4 +44,23 @@ function Cellar() {
   )
 }
 export default Cellar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
