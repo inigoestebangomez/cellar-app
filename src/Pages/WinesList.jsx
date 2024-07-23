@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+
 import WineModal from "../Components/WineModal";
+import NavBarWines from "../Components/NavBarWines";
 
 function WinesList({type}) {
   
@@ -27,6 +28,7 @@ function WinesList({type}) {
    
   return (
     <div>
+      <NavBarWines type = {type[0].toUpperCase()+type.slice(1)}/>
       {wines.map ((eachWine, index)=>{
         return (
           <div key={index} className="wine-card">

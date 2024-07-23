@@ -21,6 +21,19 @@ function HomePage() {
 <Link to={`/wines/whites`}>
 <button>whites</button>
 </Link>
+<Link to={`/wines/rose`}>
+<button>rose</button>
+</Link>
+<Link to={`/wines/sparkling`}>
+<button>sparkling</button>
+</Link>
+<Link to={`/wines/dessert`}>
+<button>dessert</button>
+</Link>
+<Link to={`/wines/port`}>
+<button>port</button>
+</Link>
+
 
     </div>
   )
