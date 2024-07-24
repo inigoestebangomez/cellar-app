@@ -4,6 +4,7 @@ import axios from "axios";
 import WineModal from "../Components/WineModal";
 import NavBarWines from "../Components/NavBarWines";
 
+
 function WinesList({type}) {
   
   console.log(type)

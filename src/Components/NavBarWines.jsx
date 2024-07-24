@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -8,24 +9,24 @@ function NavBarWines({type}) {
     <div>
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand>Cellar Web</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/">Pagina de inicio</Nav.Link>
-              <Nav.Link href="/cellar">Cellar</Nav.Link>
+              <Nav.Link as={ Link } to="/">Pagina de inicio</Nav.Link>
+              <Nav.Link as={ Link } to="/cellar">Cellar</Nav.Link>
               <NavDropdown title={`${type}`} id="basic-nav-dropdown">
-                <NavDropdown.Item href="/wines/reds">Reds</NavDropdown.Item>
-                <NavDropdown.Item href="/wines/whites">Whites</NavDropdown.Item>
-                <NavDropdown.Item href="/wines/rose">Rose</NavDropdown.Item>
-                <NavDropdown.Item href="/wines/sparkling">
+                <NavDropdown.Item as={ Link } to="/wines/reds">Reds</NavDropdown.Item>
+                <NavDropdown.Item as={ Link } to="/wines/whites">Whites</NavDropdown.Item>
+                <NavDropdown.Item as={ Link } to="/wines/rose">Rose</NavDropdown.Item>
+                <NavDropdown.Item as={ Link } to="/wines/sparkling">
                   Sparkling
                 </NavDropdown.Item>
-                <NavDropdown.Item href="/wines/dessert">
+                <NavDropdown.Item as={ Link } to="/wines/dessert">
                   Dessert
                 </NavDropdown.Item>
-                <NavDropdown.Item href="/wines/port">Port</NavDropdown.Item>
+                <NavDropdown.Item as={ Link } to="/wines/port">Port</NavDropdown.Item>
               </NavDropdown>
+                <Nav.Link as={ Link } to="/about">About us</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

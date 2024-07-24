@@ -80,9 +80,9 @@ function HomePage() {
             margin: '10px',
           }}></button>
 </Link>
-<Link to={`/wines/dessert`}>
-<button className="dessert-wines-img" style={{
-            backgroundImage: `url(${dessertWine})`,
+<Link to={`/wines/port`}>
+<button className="porto-wines-img" style={{
+            backgroundImage: `url(${portoWine})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             width: '200px',
@@ -92,9 +92,9 @@ function HomePage() {
             margin: '10px',
           }}></button>
 </Link>
-<Link to={`/wines/port`}>
-<button className="porto-wines-img" style={{
-            backgroundImage: `url(${portoWine})`,
+<Link to={`/wines/dessert`}>
+<button className="dessert-wines-img" style={{
+            backgroundImage: `url(${dessertWine})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             width: '200px',

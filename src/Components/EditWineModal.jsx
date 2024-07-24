@@ -1,13 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import ModalHeader from "react-bootstrap/ModalHeader";
 
-function EditWineModal({ inFechaDeCompra, inPrecio, inCantidad, id }) {
-  const navigate = useNavigate();
+function EditWineModal({ getOurBottles, id }) {
 
   const [precio, setPrecio] = useState("");
   const [cantidad, setCantidad] = useState("");
@@ -59,8 +57,7 @@ function EditWineModal({ inFechaDeCompra, inPrecio, inCantidad, id }) {
         updatedWine
       );
       handleClose();
-      getData();
-      navigate(`/cellar`);
+      getOurBottles();
     } catch (error) {
       console.log(error);
     }
@@ -72,7 +69,7 @@ function EditWineModal({ inFechaDeCompra, inPrecio, inCantidad, id }) {
         `${import.meta.env.VITE_SERVER_URL}/inventories/${id}`
       );
       handleClose();
-      navigate(`/cellar`);
+      getOurBottles()
     } catch (error) {
       console.log(error);
     }

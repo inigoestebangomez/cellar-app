@@ -2,7 +2,9 @@
 
 function SearchAndFilter() {
   return (
-    <div>SearchAndFilter</div>
+    <div>
+
+    </div>
   )
 }
 

@@ -2,6 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 
 import EditWineModal from "../Components/EditWineModal"
+import NavBarCellar from "../Components/NavBarCellar"
 
 // cuando abrimos en detalle cada vino: llamada a la API correspondiente
 function Cellar() {
@@ -22,6 +23,7 @@ function Cellar() {
  }
   return (
     <div>
+      <NavBarCellar />
       <h1>BODEGA</h1>
       <div>
       {inventory.map ((eachInventory, index) => {
@@ -34,7 +36,7 @@ function Cellar() {
           <p>Precio por botella: {eachInventory.precio} €</p>
           <p>Cantidad: {eachInventory.cantidad} uds</p>
 
-          <EditWineModal id ={eachInventory.id}  inFechaDeCompra={eachInventory.fechaDeCompra} inPrecio={eachInventory.precio} inCantidad={eachInventory.cantidad}/>
+          <EditWineModal id ={eachInventory.id}  inFechaDeCompra={eachInventory.fechaDeCompra} inPrecio={eachInventory.precio} inCantidad={eachInventory.cantidad} getOurBottles={getOurBottles}/>
 
           </div>
         )
