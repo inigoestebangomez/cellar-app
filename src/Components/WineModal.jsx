@@ -41,7 +41,7 @@ function WineModal({winery, wine, rating, location, image}) {
   return (
     <>
       <Button className="" variant="primary" onClick={handleShow}>
-        Más detalles
+      Añadir a bodega
       </Button>
 
       <Modal show={show} onHide={handleClose}>
@@ -91,10 +91,7 @@ function WineModal({winery, wine, rating, location, image}) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Cerrar
-          </Button>
-          <Button variant="primary" onClick={handleAddCellar}>
+          <Button variant="outline-success" onClick={handleAddCellar}>
             Añadir a bodega
           </Button>
         </Modal.Footer>

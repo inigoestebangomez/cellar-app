@@ -78,12 +78,12 @@ function EditWineModal({ getOurBottles, id }) {
   return (
     <div>
       <Button className="" variant="primary" onClick={handleShow}>
-        Más detalles
+        Editar
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <ModalHeader closeButton>
-          <Modal.Title>Añadir a bodega:</Modal.Title>
+          <Modal.Title>Editar campos:</Modal.Title>
         </ModalHeader>
         <Modal.Body>
           <img src={image} alt="bottle-image" />
@@ -125,11 +125,13 @@ function EditWineModal({ getOurBottles, id }) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button type="button" class="btn btn-outline-success" variant="primary" onClick={handleDeleteWine}>
-            Borrar
-          </Button>
           <Button variant="primary" onClick={handleEditWine}>
-            Editar
+            Guardar
+          </Button>
+        </Modal.Footer>
+        <Modal.Footer>
+          <Button type="button" class="btn btn-outline-delete" variant="danger" onClick={handleDeleteWine}>
+            Borrar
           </Button>
         </Modal.Footer>
       </Modal>
