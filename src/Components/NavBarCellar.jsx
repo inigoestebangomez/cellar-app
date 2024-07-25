@@ -7,7 +7,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 function NavBarCellar() {
   return (
     <div className='nav-bar-cellar'>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className="bg-body-tertiary" bg="dark" data-bs-theme="dark">
         <Container>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

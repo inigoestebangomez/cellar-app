@@ -12,9 +12,9 @@
 
 /* HOMEPAGE */
 
-.homepage-logo{
-  width: 15px;
-}
+.homepage-logo img{
+  width: 60px;
+margin-bottom: 20px;}
 
 .red-wines-img:hover {
   -webkit-box-shadow: 1px 1px 30px 0px #000000; 
@@ -81,15 +81,30 @@ padding: 5px;
 }
 
 .reds {
-  background-color: red;
+  
 }
 
 .whites {
-  background-color: palegoldenrod;
 }
 
 .wine-card {
   transition: opacity 1s;
+
+  border-radius: 50px;
+  width: 330px;
+  height:600px;
+  color: #ffffff;
+  margin: 20px;
+  border: 1px, solid, #838282;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wine-card:hover {
+  -webkit-box-shadow: 1px 1px 30px 0px #000000; 
+  box-shadow: 1px 1px 30px 0px #838282;
 }
 
 .wine-card-invisible {
@@ -98,4 +113,12 @@ padding: 5px;
 
 .wine-card-visible {
   opacity: 1;
+}
+
+.list-cards{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+
 }

@@ -71,6 +71,7 @@ function WinesList() {
     <div className={`container-wine-list ${type}`}>
       <NavBarWines />
       <SearchAndFilter wines={wines} setSearchWine={setSearchWine} handleCheckBox={handleCheckBox} searchLocation={searchLocation}/>
+      <div className="list-cards">
       {wines
         .filter((eachWine) => {
           return eachWine.wine.toLowerCase().includes(searchWine.toLowerCase());
@@ -126,9 +127,9 @@ function WinesList() {
         }).map((eachWine, index) => {
           return (
             <div key={index} className={`wine-card ${classVisible}`}>
-              <img src={eachWine.image} alt="bottle-image" />
-              <h4>Winery: {eachWine.winery}</h4>
-              <h4>Wine: {eachWine.wine}</h4>
+              <img src={eachWine.image} alt="bottle-image" style={{width: 80, height:300}}/>
+              <h5>Winery: {eachWine.winery}</h5>
+              <h5>Wine: {eachWine.wine}</h5>
               <p>📍 {eachWine.location}</p>
               <p>⭐ {eachWine.rating.average}</p>
               <WineModal
@@ -141,6 +142,7 @@ function WinesList() {
             </div>
           );
         })}
+        </div>
     </div>
   );
 }
