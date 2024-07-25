@@ -4,8 +4,11 @@ import WineModal from "../Components/WineModal";
 import NavBarWines from "../Components/NavBarWines";
 import SearchAndFilter from "../Components/SearchAndFilter";
 import Spinner from 'react-bootstrap/Spinner';
+import { useParams } from "react-router-dom";
 
-function WinesList({ type }) {
+function WinesList() {
+  const {type} = useParams()
+
   const [wines, setWines] = useState(null);
   const [searchWine, setSearchWine] = useState("");
   const [ searchLocation, setSearchLocation ] = useState(
@@ -28,14 +31,14 @@ function WinesList({ type }) {
     newZealand: false,
     }
   )
+  const [ classVisible, setClassVisible ] = useState("wine-card-invisible")
   
   const handleCheckBox = (event) => {
-
     console.log(event.target.value)
     setSearchLocation({ 
-      ...searchLocation,
+       ...searchLocation,
       [event.target.name]: event.target.checked
-     })
+    })
 }
 
   useEffect(() => {
@@ -49,6 +52,11 @@ function WinesList({ type }) {
       );
       console.log(response);
       setWines(response.data);
+
+      setTimeout(() => {
+          setClassVisible("wine-card-visible")
+      }, 1) // esto es para forzar que primero se renderize invisible y luego visible, causando la transición de css
+
     } catch (error) {
       console.log(error);
     }
@@ -60,16 +68,18 @@ function WinesList({ type }) {
 // si type es white, classname es wine-white... etc
 
   return (
-    <div className="container-wine-list">
-      <NavBarWines type={type[0].toUpperCase() + type.slice(1)} />
+    <div className={`container-wine-list ${type}`}>
+      <NavBarWines />
       <SearchAndFilter wines={wines} setSearchWine={setSearchWine} handleCheckBox={handleCheckBox} searchLocation={searchLocation}/>
       {wines
         .filter((eachWine) => {
           return eachWine.wine.toLowerCase().includes(searchWine.toLowerCase());
         }).filter((eachWine) => {
-          const locationClean = eachWine.location.toLowerCase().slice(0, eachWine.location.indexOf("·")).trim()
-          console.log(locationClean)
-          console.log(searchLocation.spain)
+          // return Object.values(searchLocation).includes(true) ? searchLocation[eachWine.location.toLowerCase().slice(0, eachWine.location.indexOf("·")).trim()] : true
+          
+           const locationClean = eachWine.location.toLowerCase().slice(0, eachWine.location.indexOf("·")).trim()
+          // console.log(locationClean)
+          // console.log(searchLocation.spain)
           // searchLocation.spain => nos dirá true o false
           // eachWine.location => nos dirá spain. portugal, italia...
           // si todos los checks son falsos retorna todos los vinos
@@ -111,10 +121,11 @@ function WinesList({ type }) {
           } else {
             return false
           }
+          
 
         }).map((eachWine, index) => {
           return (
-            <div key={index} className="wine-card">
+            <div key={index} className={`wine-card ${classVisible}`}>
               <img src={eachWine.image} alt="bottle-image" />
               <h4>Winery: {eachWine.winery}</h4>
               <h4>Wine: {eachWine.wine}</h4>

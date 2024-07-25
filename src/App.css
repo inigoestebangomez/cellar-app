@@ -7,9 +7,15 @@
   font-weight: 400;
   background-color: #161a1f;
   color: rgba(255, 255, 255, 0.87);
+  max-height: fit-content;
 }
 
 /* HOMEPAGE */
+
+.homepage-logo{
+  width: 15px;
+}
+
 .red-wines-img:hover {
   -webkit-box-shadow: 1px 1px 30px 0px #000000; 
   box-shadow: 1px 1px 30px 0px #B70D1E;
@@ -72,4 +78,24 @@ padding: 5px;
   display: flex;
   margin-top: 10px;
   margin-bottom: 10px
+}
+
+.reds {
+  background-color: red;
+}
+
+.whites {
+  background-color: palegoldenrod;
+}
+
+.wine-card {
+  transition: opacity 1s;
+}
+
+.wine-card-invisible {
+  opacity: 0;
+}
+
+.wine-card-visible {
+  opacity: 1;
 }

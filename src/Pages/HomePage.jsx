@@ -6,12 +6,15 @@ import roseWine from '../images/vino-rosado.jpg';
 import sparklingWine from '../images/vino-espumoso.jpg';
 import dessertWine from '../images/vino-postre.jpg';
 import portoWine from '../images/vino-oporto.jpg';
+import logo from '../images/WineWebHome.png';
 
 
 
 function HomePage() {
   
   return (
+    <div className='homepage-logo'>
+      <img src={logo} alt="logo-web"/>
     <div className='homepage-images'>
 <Link to={`/wines/reds`}>
 <button className="red-wines-img" style={{
@@ -85,6 +88,7 @@ function HomePage() {
             margin: '10px',
           }}></button>
 </Link>
+    </div>
     </div>
   )
 }
