@@ -17,6 +17,7 @@ function SearchAndFilter(props) {
       />
       
       <div className="checkbox">
+        <p id="location">Location</p>
         <input
           name="spain"
           onChange={props.handleCheckBox}
@@ -58,7 +59,7 @@ function SearchAndFilter(props) {
           checked={props.searchLocation.chile}
           type="checkbox"
         />
-        <label htmlFor="chile">Chile </label>
+        <label htmlFor="Chile">Chile </label>
         <input
           name="unitedStates"
           onChange={props.handleCheckBox}
@@ -73,6 +74,7 @@ function SearchAndFilter(props) {
           type="checkbox"
         />
         <label htmlFor="Canada">Canada </label>
+        <br />
         <input
           name="australia"
           onChange={props.handleCheckBox}

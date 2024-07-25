@@ -41,3 +41,21 @@
 }
 
 /* WINE-LIST */
+
+.checkbox {
+border: 1px solid white;
+border-radius: 5px;
+padding: 5px;
+}
+
+.checkbox label {
+  padding: 3px;
+}
+
+#location {
+  display: flex;
+  width: 71px;
+  margin-top:-17px;
+  margin-left:7px;
+  background:#161a1f;
+}
