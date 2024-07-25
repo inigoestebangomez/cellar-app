@@ -3,6 +3,7 @@ import axios from "axios";
 import WineModal from "../Components/WineModal";
 import NavBarWines from "../Components/NavBarWines";
 import SearchAndFilter from "../Components/SearchAndFilter";
+import Spinner from 'react-bootstrap/Spinner';
 
 function WinesList({ type }) {
   const [wines, setWines] = useState(null);
@@ -53,11 +54,13 @@ function WinesList({ type }) {
     }
   };
   if (wines === null) {
-    return <h3>...buscando data</h3>;
+    return <Spinner animation="grow" />;
   }
+// queremos que si type es red, el classname del div es el background de wine-red
+// si type es white, classname es wine-white... etc
 
   return (
-    <div>
+    <div className="container-wine-list">
       <NavBarWines type={type[0].toUpperCase() + type.slice(1)} />
       <SearchAndFilter wines={wines} setSearchWine={setSearchWine} handleCheckBox={handleCheckBox} searchLocation={searchLocation}/>
       {wines
@@ -113,9 +116,9 @@ function WinesList({ type }) {
           return (
             <div key={index} className="wine-card">
               <img src={eachWine.image} alt="bottle-image" />
-              <h4>Bodega: {eachWine.winery}</h4>
-              <h4>Vino: {eachWine.wine}</h4>
-              <p>{eachWine.location}</p>
+              <h4>Winery: {eachWine.winery}</h4>
+              <h4>Wine: {eachWine.wine}</h4>
+              <p>📍 {eachWine.location}</p>
               <p>⭐ {eachWine.rating.average}</p>
               <WineModal
                 winery={eachWine.winery}

@@ -76,24 +76,24 @@ function EditWineModal({ getOurBottles, id }) {
   };
 
   return (
-    <div>
-      <Button className="" variant="primary" onClick={handleShow}>
-        Editar
+    <div className="edit-modal">
+      <Button className="edit-button-modal" variant="primary" onClick={handleShow}>
+        Edit
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <ModalHeader closeButton>
-          <Modal.Title>Editar campos:</Modal.Title>
+          <Modal.Title>Edit inventory:</Modal.Title>
         </ModalHeader>
         <Modal.Body>
           <img src={image} alt="bottle-image" />
-          <h4>Bodega: {winery}</h4>
-          <h4>Vino: {wine}</h4>
+          <h4>Winery: {winery}</h4>
+          <h4>Wine: {wine}</h4>
           {/* <p>{location}</p> */}
           {/*  ! <p>⭐ {rating.average}</p> */}
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Existencias botellas: </Form.Label>
+              <Form.Label>Bottle stock: </Form.Label>
               <Form.Control
                 type="number"
                 name="cantidad"
@@ -103,7 +103,7 @@ function EditWineModal({ getOurBottles, id }) {
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Precio por botella: </Form.Label>
+              <Form.Label>Price per bottle: </Form.Label>
               <Form.Control
                 type="number"
                 name="precio"
@@ -113,7 +113,7 @@ function EditWineModal({ getOurBottles, id }) {
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Año de compra: </Form.Label>
+              <Form.Label>Purchase year: </Form.Label>
               <Form.Control
                 type="number"
                 name="fechaDeCompra"
@@ -125,13 +125,13 @@ function EditWineModal({ getOurBottles, id }) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={handleEditWine}>
-            Guardar
+          <Button className="button-save" variant="primary" onClick={handleEditWine}>
+            Save
           </Button>
         </Modal.Footer>
         <Modal.Footer>
-          <Button type="button" class="btn btn-outline-delete" variant="danger" onClick={handleDeleteWine}>
-            Borrar
+          <Button className="button-delete" type="button" class="btn btn-outline-delete" variant="danger" onClick={handleDeleteWine}>
+            Delete
           </Button>
         </Modal.Footer>
       </Modal>

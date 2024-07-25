@@ -41,49 +41,49 @@ function WineModal({winery, wine, rating, location, image}) {
   return (
     <>
       <Button className="" variant="primary" onClick={handleShow}>
-      Añadir a bodega
+      Add to cellar
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <ModalHeader closeButton>
-          <Modal.Title>Añadir a bodega:</Modal.Title>
+          <Modal.Title>Add to cellar:</Modal.Title>
         </ModalHeader>
         <Modal.Body>
         <img src={image} alt="bottle-image"/>
-          <h4>Bodega: {winery}</h4>
-          <h4>Vino: {wine}</h4>    
+          <h4>Winery: {winery}</h4>
+          <h4>Wine: {wine}</h4>    
           <p>{location}</p>
           <p>⭐ {rating.average}</p>
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Añadir botellas: </Form.Label>
+              <Form.Label>Add bottles: </Form.Label>
               <Form.Control
                 type="number"
                 name="cantidad"
                 value={cantidad}
-                placeholder="número de botellas"
+                placeholder="For example: 10"
                 onChange={(e) => setCantidad(e.target.value)}
                 autoFocus
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Precio por botella: </Form.Label>
+              <Form.Label>Price per bottle: </Form.Label>
               <Form.Control
                 type="number"
                 name="precio"
                 value={precio}
-                placeholder= "precio por botella"
+                placeholder= "For example: 120"
                 onChange={(e) => setPrecio(e.target.value)}
                 autoFocus
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Año de compra: </Form.Label>
+              <Form.Label>Purchase year: </Form.Label>
               <Form.Control
                 type="number"
                 name="fechaDeCompra"
                 value={fechaDeCompra}
-                placeholder= "año de compra"
+                placeholder= "For example: 2024"
                 onChange={(e) => setFechaDeCompra(e.target.value)}
                 autoFocus
               />
@@ -92,7 +92,7 @@ function WineModal({winery, wine, rating, location, image}) {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="outline-success" onClick={handleAddCellar}>
-            Añadir a bodega
+            Add
           </Button>
         </Modal.Footer>
       </Modal>

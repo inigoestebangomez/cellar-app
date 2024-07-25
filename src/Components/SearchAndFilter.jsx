@@ -1,18 +1,21 @@
-import { useState } from "react";
 
 function SearchAndFilter(props) {
+
   const handleSearchWine = (event) => {
     props.setSearchWine(event.target.value);
   };
 
   return (
-    <div className="checkbox-countries">
+    <div className="search-and-filter">
+
       <input
         className="search-bar-wines"
         type="text"
+        placeholder="Search by name"
         onChange={handleSearchWine}
         value={props.searchWine}
       />
+      
       <div className="checkbox">
         <input
           name="spain"

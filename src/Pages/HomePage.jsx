@@ -12,26 +12,7 @@ import portoWine from '../images/vino-oporto.jpg';
 function HomePage() {
   
   return (
-    <div>
-  {/* <Link to={`/wines/reds`}>
-      <img className="red-wines-img" src={redWine} alt="red wines" width={100}/>
-  </Link>
-  <Link to={`/wines/reds`}>
-      <img className="white-wines-img" src={whiteWine} alt="white wines" width={100}/>
-  </Link>
-  <Link to={`/wines/reds`}>
-      <img className="rose-wines-img" src={roseWine} alt="rose wines" width={100}/>
-  </Link>
-  <Link to={`/wines/reds`}>
-      <img className="sparkling-wines-img" src={sparklingWine} alt="sparkling wines" width={100}/>
-  </Link>
-  <Link to={`/wines/reds`}>
-      <img className="dessert-wines-img" src={dessertWine} alt="dessert wines" width={100}/>
-  </Link>
-  <Link to={`/wines/reds`}>
-      <img className="porto-wines-img" src={portoWine} alt="porto wines" width={100}/>
-  </Link> */}
-
+    <div className='homepage-images'>
 <Link to={`/wines/reds`}>
 <button className="red-wines-img" style={{
             backgroundImage: `url(${redWine})`,
@@ -104,8 +85,6 @@ function HomePage() {
             margin: '10px',
           }}></button>
 </Link>
-
-
     </div>
   )
 }
