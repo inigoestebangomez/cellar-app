@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 function NavBarAbout() {
   return (
     <div className='nav-bar-about'>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className="bg-body-tertiary" bg="light" data-bs-theme="dark">
         <Container>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

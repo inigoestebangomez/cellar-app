@@ -81,12 +81,14 @@ function EditWineModal({ getOurBottles, id }) {
         Edit
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} bg="light" data-bs-theme="dark">
         <ModalHeader closeButton>
-          <Modal.Title>Edit inventory:</Modal.Title>
+          <Modal.Title className="bg-dark text-white">Edit inventory:</Modal.Title>
         </ModalHeader>
-        <Modal.Body>
+        <Modal.Body className="bg-dark text-white">
+          <div style={{display: "flex", justifyContent: "center"}}>
           <img src={image} alt="bottle-image" />
+          </div>
           <h4>Winery: {winery}</h4>
           <h4>Wine: {wine}</h4>
           {/* <p>{location}</p> */}

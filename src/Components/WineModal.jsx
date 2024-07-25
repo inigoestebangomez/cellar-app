@@ -44,12 +44,14 @@ function WineModal({winery, wine, rating, location, image}) {
       Add to cellar
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} bg="light" data-bs-theme="dark">
         <ModalHeader closeButton>
-          <Modal.Title>Add to cellar:</Modal.Title>
+          <Modal.Title className="bg-dark text-white">Add to cellar:</Modal.Title>
         </ModalHeader>
-        <Modal.Body>
+        <Modal.Body className="bg-dark text-white">
+        <div style={{display: "flex", justifyContent: "center"}}>
         <img src={image} alt="bottle-image"/>
+        </div>
           <h4>Winery: {winery}</h4>
           <h4>Wine: {wine}</h4>    
           <p>{location}</p>
@@ -91,7 +93,7 @@ function WineModal({winery, wine, rating, location, image}) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="outline-success" onClick={handleAddCellar}>
+          <Button variant="success" onClick={handleAddCellar}>
             Add
           </Button>
         </Modal.Footer>

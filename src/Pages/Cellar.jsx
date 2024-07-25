@@ -3,6 +3,8 @@ import { useEffect, useState } from "react"
 import Spinner from 'react-bootstrap/Spinner';
 import EditWineModal from "../Components/EditWineModal"
 import NavBarCellar from "../Components/NavBarCellar"
+import Footer from "../Components/Footer";
+import logo2 from '../images/WineWhite.png'
 
 // cuando abrimos en detalle cada vino: llamada a la API correspondiente
 function Cellar({type}) {
@@ -23,9 +25,10 @@ function Cellar({type}) {
  }
   return (
     <div className="cellar">
+      <img className="logo" src={logo2} alt="logo-web" style={{width: "72px"}} />
       <NavBarCellar type={type}/>
       <h1 className="title-cellar">CELLAR</h1>
-      <div>
+      <div className="list-cards">
       {inventory.map ((eachInventory, index) => {
         return (
           <div key={index} className="wine-card-cellar">
@@ -41,6 +44,7 @@ function Cellar({type}) {
         )
       })}
       </div>
+      <Footer />
     </div>
   )
 }

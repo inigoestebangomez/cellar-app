@@ -5,6 +5,7 @@ import NavBarWines from "../Components/NavBarWines";
 import SearchAndFilter from "../Components/SearchAndFilter";
 import Spinner from 'react-bootstrap/Spinner';
 import { useParams } from "react-router-dom";
+import logo1 from '../images/WineRed.png'
 
 function WinesList() {
   const {type} = useParams()
@@ -69,6 +70,7 @@ function WinesList() {
 
   return (
     <div className={`container-wine-list ${type}`}>
+       <img className="logo" src={logo1} alt="logo-web" style={{width: "72px"}} />
       <NavBarWines />
       <SearchAndFilter wines={wines} setSearchWine={setSearchWine} handleCheckBox={handleCheckBox} searchLocation={searchLocation}/>
       <div className="list-cards">

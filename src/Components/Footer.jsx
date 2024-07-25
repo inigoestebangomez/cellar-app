@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom"
-
+import logogithub from "../images/githublogo.png"
 
 function Footer() {
   return (
     <div className="footer">
-      RRSS
-      <Link to ={"https://github.com/inigoestebangomez/cellar-app.git"}><h4>GitHub</h4> </Link>
+      <Link to ={"https://github.com/inigoestebangomez/cellar-app.git"}><img src={logogithub} alt="logo-git-hub" style={{width: "69px"}}/></Link>
+    
     </div>
   )
 }
