@@ -10,10 +10,21 @@ function WinesList({ type }) {
   const [ searchLocation, setSearchLocation ] = useState(
     {
       spain: false,
-      france: false,
-      portugal: false,
-      unitedStates: false,
-      italy: false,
+    france: false,
+    portugal: false,
+    unitedStates: false,
+    italy: false,
+    argentina: false,
+    chile: false,
+    canada: false,
+    australia: false,
+    southAfrica: false,
+    macedonia: false,
+    switzerland: false,
+    germany: false,
+    austria: false,
+    hungary: false,
+    newZealand: false,
     }
   )
   
@@ -59,7 +70,7 @@ function WinesList({ type }) {
           // searchLocation.spain => nos dirá true o false
           // eachWine.location => nos dirá spain. portugal, italia...
           // si todos los checks son falsos retorna todos los vinos
-          if( searchLocation.spain === false && searchLocation.france === false && searchLocation.portugal === false  && searchLocation.unitedStates === false && searchLocation.italy === false ){
+          if ( searchLocation.spain === false && searchLocation.france === false && searchLocation.portugal === false  && searchLocation.unitedStates === false && searchLocation.italy === false && searchLocation.argentina === false && searchLocation.chile === false && searchLocation.canada === false && searchLocation.australia === false && searchLocation.southAfrica === false && searchLocation.macedonia === false && searchLocation.switzerland === false && searchLocation.germany === false && searchLocation.austria === false && searchLocation.hungary === false && searchLocation.newZealand === false ){
             return true
           } 
           else if( locationClean === "spain" && searchLocation.spain === true ){
@@ -71,6 +82,28 @@ function WinesList({ type }) {
           } else if( locationClean === "united states" && searchLocation.unitedStates === true ){
             return true
           } else if( locationClean === "italy" && searchLocation.italy === true ){
+            return true
+          } else if( locationClean === "argentina" && searchLocation.argentina === true ){
+            return true
+          } else if( locationClean === "chile" && searchLocation.chile === true ){
+            return true
+          } else if( locationClean === "canada" && searchLocation.canada === true ){
+            return true
+          } else if( locationClean === "australia" && searchLocation.australia === true ){
+            return true
+          }else if( locationClean === "south africa" && searchLocation.southAfrica === true ){
+            return true
+          }else if( locationClean === "macedonia" && searchLocation.macedonia === true ){
+            return true
+          } else if( locationClean === "switzerland" && searchLocation.switzerland === true ){
+            return true
+          } else if( locationClean === "germany" && searchLocation.germany === true ){
+            return true
+          } else if( locationClean === "austria" && searchLocation.austria === true ){
+            return true
+          } else if( locationClean === "hungary" && searchLocation.hungary === true ){
+            return true
+          } else if( locationClean === "new zealand" && searchLocation.newZealand === true ){
             return true
           } else {
             return false
