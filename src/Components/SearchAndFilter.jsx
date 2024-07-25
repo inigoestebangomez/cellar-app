@@ -1,13 +1,10 @@
 
 function SearchAndFilter(props) {
-
   const handleSearchWine = (event) => {
     props.setSearchWine(event.target.value);
   };
-
   return (
     <div className="search-and-filter">
-
       <input
         className="search-bar-wines"
         type="text"
@@ -15,9 +12,10 @@ function SearchAndFilter(props) {
         onChange={handleSearchWine}
         value={props.searchWine}
       />
-      
       <div className="checkbox">
-        <p id="location">Location</p>
+          <p id="location">Location</p>
+        <div className="countries">
+        <div>
         <input
           name="spain"
           onChange={props.handleCheckBox}
@@ -25,6 +23,8 @@ function SearchAndFilter(props) {
           type="checkbox"
         />
         <label htmlFor="Spain">Spain </label>
+        </div>
+        <div>
         <input
           name="france"
           onChange={props.handleCheckBox}
@@ -32,6 +32,8 @@ function SearchAndFilter(props) {
           type="checkbox"
         />
         <label htmlFor="France">France </label>
+        </div>
+        <div>
         <input
           name="portugal"
           onChange={props.handleCheckBox}
@@ -39,6 +41,8 @@ function SearchAndFilter(props) {
           type="checkbox"
         />
         <label htmlFor="Portugal">Portugal </label>
+        </div>
+        <div>
         <input
           name="italy"
           onChange={props.handleCheckBox}
@@ -46,6 +50,8 @@ function SearchAndFilter(props) {
           type="checkbox"
         />
         <label htmlFor="Italy">Italy </label>
+        </div>
+        <div>
         <input
           name="argentina"
           onChange={props.handleCheckBox}
@@ -53,6 +59,8 @@ function SearchAndFilter(props) {
           type="checkbox"
         />
         <label htmlFor="Argentina">Argentina </label>
+        </div>
+        <div>
         <input
           name="chile"
           onChange={props.handleCheckBox}
@@ -60,6 +68,8 @@ function SearchAndFilter(props) {
           type="checkbox"
         />
         <label htmlFor="Chile">Chile </label>
+        </div>
+        <div>
         <input
           name="unitedStates"
           onChange={props.handleCheckBox}
@@ -67,6 +77,8 @@ function SearchAndFilter(props) {
           type="checkbox"
         />
         <label htmlFor="UnitedStates">United States </label>
+        </div>
+        <div>
         <input
           name="Canada"
           onChange={props.handleCheckBox}
@@ -74,7 +86,8 @@ function SearchAndFilter(props) {
           type="checkbox"
         />
         <label htmlFor="Canada">Canada </label>
-        <br />
+        </div>
+        <div>
         <input
           name="australia"
           onChange={props.handleCheckBox}
@@ -82,6 +95,8 @@ function SearchAndFilter(props) {
           type="checkbox"
         />
         <label htmlFor="Australia">Australia </label>
+        </div>
+        <div>
         <input
           name="southAfrica"
           onChange={props.handleCheckBox}
@@ -89,6 +104,8 @@ function SearchAndFilter(props) {
           type="checkbox"
         />
         <label htmlFor="SouthAfrica">South Africa </label>
+        </div>
+        <div>
         <input
           name="macedonia"
           onChange={props.handleCheckBox}
@@ -96,6 +113,8 @@ function SearchAndFilter(props) {
           type="checkbox"
         />
         <label htmlFor="Macedonia">Macedonia </label>
+        </div>
+        <div>
         <input
           name="switzerland"
           onChange={props.handleCheckBox}
@@ -103,6 +122,8 @@ function SearchAndFilter(props) {
           type="checkbox"
         />
         <label htmlFor="Switzerland">Switzerland </label>
+        </div>
+        <div>
         <input
           name="germany"
           onChange={props.handleCheckBox}
@@ -110,6 +131,8 @@ function SearchAndFilter(props) {
           type="checkbox"
         />
         <label htmlFor="Germany">Germany </label>
+        </div>
+        <div>
         <input
           name="austria"
           onChange={props.handleCheckBox}
@@ -117,6 +140,8 @@ function SearchAndFilter(props) {
           type="checkbox"
         />
         <label htmlFor="Austria">Austria </label>
+        </div>
+        <div>
         <input
           name="hungary"
           onChange={props.handleCheckBox}
@@ -124,6 +149,8 @@ function SearchAndFilter(props) {
           type="checkbox"
         />
         <label htmlFor="Hungary">Hungary </label>
+        </div>
+        <div>
         <input
           name="newZealand"
           onChange={props.handleCheckBox}
@@ -131,9 +158,10 @@ function SearchAndFilter(props) {
           type="checkbox"
         />
         <label htmlFor="NewZealand">New Zealand </label>
+        </div>
+        </div>
       </div>
     </div>
   );
 }
-
 export default SearchAndFilter;
