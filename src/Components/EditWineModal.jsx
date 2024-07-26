@@ -13,6 +13,7 @@ function EditWineModal({ getOurBottles, id }) {
   const [image, setImage] = useState("");
   const [wine, setWine] = useState("");
   const [winery, setWinery] = useState("");
+  const [location, setLocation] = useState("");
 
   const [show, setShow] = useState(false);
 
@@ -35,6 +36,8 @@ function EditWineModal({ getOurBottles, id }) {
       setImage(response.data.image);
       setWine(response.data.wine);
       setWinery(response.data.winery);
+      setLocation(response.data.location);
+
     } catch (error) {
       console.log(error);
     }
@@ -47,6 +50,7 @@ function EditWineModal({ getOurBottles, id }) {
       image,
       wine,
       winery,
+      location,
       fechaDeCompra,
       cantidad,
       precio,
@@ -91,8 +95,7 @@ function EditWineModal({ getOurBottles, id }) {
           </div>
           <h4>Winery: {winery}</h4>
           <h4>Wine: {wine}</h4>
-          {/* <p>{location}</p> */}
-          {/*  ! <p>⭐ {rating.average}</p> */}
+          <p>📍 {location}</p>
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Bottle stock: </Form.Label>
