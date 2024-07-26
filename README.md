@@ -17,7 +17,8 @@ Con todo esto, se muestra el vino seleccionado y se da la opción de añadir a l
 - Año de compra
 Finalmente, el usuario podrá visualizar su inventario de botellas en su bodega virtual, donde podrá darle seguimiento del número de botellas que quedan, consultar el precio al que compró, y el año de su compra que le servirá para controlar el consumo de las mismas.
 
-## Paginas
+## Client Routes
+**NOTE -** Frontend routes
 - **/home** - Página de inicio del usuario, desde donde elige el tipo de vino que quiere buscar para añadir después a su bodega
 - **/wines/:type** - Página que muestra los vinos en catálogo, en función de su elección anterior.
 - **/cellar** - La página propia del usuario, donde guardará sus botellas.
@@ -26,12 +27,7 @@ Finalmente, el usuario podrá visualizar su inventario de botellas en su bodega 
 - **/error** - Página de 500.
 Además consta de tres modals dentro de las paginas de about, cellar y wines; en cellar para editar las existencias que tenemos en nuestra bodega y en wines otro para añadir el vino a cellar.
 
-## Client Routes
-
-**NOTE -** Frontend routes
-
-## React Router Routes (React App)
-## Metodos del server
+## Back End Routes
 | Method                      | URL             |Request body                          | Description                                                   |
 | --------------------------- | ----------------| -----------------------------------  |  ------------------------------------------------------------ |
 | GET                         | /inventories    | n/a                                  | Retorna un array de todos los productos del inventario        |
