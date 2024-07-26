@@ -9,10 +9,14 @@ import logo3 from '../images/WineRose.png'
 
 function About() {
 
-  const [ show, setShow ] = useState (false);
+  const [ inigoShow, setInigoShow ] = useState (false);
+  const [ felixShow, setFelixShow ] = useState (false)
   
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleCloseI = () => setInigoShow(false);
+  const handleCloseF = () => setFelixShow(false);
+
+  const handleShowI = () => setInigoShow(true);
+  const handleShowF = () => setFelixShow(true);
 
   return (
     <div>
@@ -20,10 +24,10 @@ function About() {
       <NavBarAbout />
 <div className="container-names">
 <h2>Iñigo Esteban Gómez</h2>
-<Button className="button-about-me" size="sm" variant="primary" onClick={handleShow}>
+<Button className="button-about-me" size="sm" variant="primary" onClick={handleShowI}>
       Meet me!
       </Button>
-      <Modal show={show} onHide={handleClose} bg="light" data-bs-theme="dark">
+      <Modal show={inigoShow} onHide={handleCloseI} bg="light" data-bs-theme="dark">
         <ModalHeader closeButton>
           <Modal.Title className="bg-dark text-white">Follow me:</Modal.Title>
         </ModalHeader>
@@ -34,10 +38,10 @@ function About() {
       </Modal>
 
 <h2>Félix Romero González</h2>
-<Button className="button-about-me" size="sm" variant="primary" onClick={handleShow}>
+<Button className="button-about-me" size="sm" variant="primary" onClick={handleShowF}>
       Meet me!
       </Button>
-      <Modal show={show} onHide={handleClose} bg="light" data-bs-theme="dark">
+      <Modal show={felixShow} onHide={handleCloseF} bg="light" data-bs-theme="dark">
         <ModalHeader closeButton>
           <Modal.Title className="bg-dark text-white">Follow me:</Modal.Title>
         </ModalHeader>

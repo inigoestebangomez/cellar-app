@@ -4,6 +4,7 @@ import './App.css'
 import About from './Pages/About'
 import HomePage from './Pages/HomePage'
 import NotFound from './Pages/NotFound'
+import Error from './Pages/Error'
 import WinesList from './Pages/WinesList'
 import Cellar from './Pages/Cellar'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -27,6 +28,8 @@ function App() {
 
     <Route path = "/cellar" element = {<Cellar />} />
     <Route path = "*" element = {<NotFound />} />
+    <Route path = "/error" element = {<Error />} />
+
     </Routes> 
 
     </>

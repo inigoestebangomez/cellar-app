@@ -9,7 +9,7 @@ function NotFound({type}) {
  <img className="logo" src={logo4} alt="logo-web" style={{width: "72px"}} />
       <NavBarCellar type={type}/>
 <h4>Maybe your are lost! Get back to your cellar</h4>
-<img src={errorImage} alt="error-image" style={{width: "800px"}} />
+<img className="crashes" src={errorImage} alt="error-image" />
 <Footer />
     </div>
   )

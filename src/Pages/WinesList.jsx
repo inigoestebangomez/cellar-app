@@ -36,11 +36,18 @@ function WinesList() {
   const [ classVisible, setClassVisible ] = useState("wine-card-invisible")
   
   const handleCheckBox = (event) => {
-    console.log(event.target.value)
-    setSearchLocation({ 
-       ...searchLocation,
-      [event.target.name]: event.target.checked
-    })
+    
+    let name = event.target.name
+    let checked = event.target.checked
+    setClassVisible("wine-card-invisible")
+
+    setTimeout(() => {
+      setSearchLocation({ 
+         ...searchLocation,
+        [name]: checked
+      })
+      setClassVisible("wine-card-visible")
+    }, 200)
 }
 
   useEffect(() => {
@@ -52,7 +59,19 @@ function WinesList() {
       const response = await axios.get(
         `https://api.sampleapis.com/wines/${type}`
       );
-      setWines(response.data);
+      
+      // esto para que ignore todos los vinos que tienen diferente resolución de imagen o imagen con icono
+      const presentableData = response.data.filter((eachWine) => {
+        let indexOfX = eachWine.image.lastIndexOf("x")
+        let imageResolution = eachWine.image.slice(indexOfX + 1, indexOfX + 4)
+        if (imageResolution === "300") {
+          return true
+        } else {
+          return false
+        }
+      })
+
+      setWines(presentableData);
 
       setTimeout(() => {
           setClassVisible("wine-card-visible")

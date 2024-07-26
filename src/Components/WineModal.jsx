@@ -27,7 +27,8 @@ function WineModal({winery, wine, rating, location, image}) {
       precio: precio,
       image: image,
       wine: wine,
-      winery: winery
+      winery: winery,
+      location: location
     }
     try {
       await axios.post(`${import.meta.env.VITE_SERVER_URL}/inventories`, addBottleToCellar)

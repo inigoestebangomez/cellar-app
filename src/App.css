@@ -81,13 +81,15 @@ padding: 5px;
 }
 
 .wine-card {
-  transition: opacity 1s;
+  transition: opacity 0.2s;
 
   border-radius: 50px;
   width: 330px;
   height:600px;
   color: #ffffff;
-  margin: 20px;
+  margin-top: 30px;
+  margin-left: 25px;
+  margin-right: 25px;
   border: 1px, solid, #838282;
   display: flex;
   flex-direction: column;
@@ -114,6 +116,10 @@ padding: 5px;
   align-items: flex-start;
   justify-content: center;
 
+}
+
+.search-and-filter div {
+  margin: 3px;
 }
 
 /* CELLAR */
@@ -157,3 +163,9 @@ padding: 5px;
 /* .footer {
   
 } */
+
+/* ERROR/NOTFOUND */
+
+.crashes {
+  max-width: 100%;
+}
