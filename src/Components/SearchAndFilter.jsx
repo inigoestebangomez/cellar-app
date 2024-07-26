@@ -80,9 +80,9 @@ function SearchAndFilter(props) {
         </div>
         <div>
         <input
-          name="Canada"
+          name="canada"
           onChange={props.handleCheckBox}
-          checked={props.searchLocation.Canada}
+          checked={props.searchLocation.canada}
           type="checkbox"
         />
         <label htmlFor="Canada">Canada </label>
