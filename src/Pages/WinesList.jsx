@@ -6,6 +6,7 @@ import SearchAndFilter from "../Components/SearchAndFilter";
 import Spinner from 'react-bootstrap/Spinner';
 import { useParams } from "react-router-dom";
 import logo1 from '../images/WineRed.png'
+import { Link } from "react-router-dom";
 
 function WinesList() {
   const {type} = useParams()
@@ -51,7 +52,6 @@ function WinesList() {
       const response = await axios.get(
         `https://api.sampleapis.com/wines/${type}`
       );
-      console.log(response);
       setWines(response.data);
 
       setTimeout(() => {
@@ -70,7 +70,8 @@ function WinesList() {
 
   return (
     <div className={`container-wine-list ${type}`}>
-       <img className="logo" src={logo1} alt="logo-web" style={{width: "72px"}} />
+       
+      <Link to= "/"><img className="logo" src={logo1} alt="logo-web" style={{width: "70px"}} /></Link>
       <NavBarWines />
       <SearchAndFilter wines={wines} setSearchWine={setSearchWine} handleCheckBox={handleCheckBox} searchLocation={searchLocation}/>
       <div className="list-cards">

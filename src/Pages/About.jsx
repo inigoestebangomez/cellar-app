@@ -16,7 +16,7 @@ function About() {
 
   return (
     <div>
-      <img className="logo" src={logo3} alt="logo-web" style={{width: "72px"}} />
+      <Link to= "/"><img className="logo" src={logo3} alt="logo-web" style={{width: "70px"}} /></Link>
       <NavBarAbout />
 <div className="container-names">
 <h2>Iñigo Esteban Gómez</h2>
